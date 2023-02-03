@@ -3,7 +3,7 @@ import {BinanceOneCryptoPairData} from "../../types/crypto-data";
 
 export const CryptoPrice = () => {
     const [data, setData] = useState<BinanceOneCryptoPairData[] | null>(null);
-const [pair, setPair] = useState<string>('')
+    const [pair, setPair] = useState<string>('')
 
     useEffect(() => {
         (async () => {
@@ -21,8 +21,8 @@ const [pair, setPair] = useState<string>('')
         <label>
             Wybierz pare kryptowalutową: <br/>
             <select
-            value={pair}
-            onChange={e => setPair(e.target.value)}
+                value={pair}
+                onChange={e => setPair(e.target.value)}
             >
                 {
                     data
