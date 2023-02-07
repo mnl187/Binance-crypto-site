@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {BinanceOneCryptoPairData} from "../../types/crypto-data";
+import {CryptoPriceOfOnePair} from "./CryptoPriceOfOnePair";
 
 export const CryptoPrice = () => {
     const [data, setData] = useState<BinanceOneCryptoPairData[] | null>(null);
@@ -36,5 +37,12 @@ export const CryptoPrice = () => {
                 }
             </select>
         </label>
+        {
+
+            pair && <CryptoPriceOfOnePair
+                onePair={data.find(one => one.symbol === pair) as
+                    BinanceOneCryptoPairData}
+            />
+        }
     </>;
 }
